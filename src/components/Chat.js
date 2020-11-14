@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Chat.css";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -7,6 +7,11 @@ import { Avatar } from "@material-ui/core";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import TelegramIcon from "@material-ui/icons/Telegram";
 function Chat() {
+  const [input, setInput] = useState("");
+  const sendMessage = (e) => {
+    e.preventDefault();
+    setInput("")
+  };
   return (
     <div className="chat">
       <div className="chat-header">
@@ -22,15 +27,21 @@ function Chat() {
       </div>
 
       <div className="chat-content">
-        <ChatCard />
-        <ChatCard />
+        <ChatCard text={input} />
         <ChatCard />
         <ChatCard />
       </div>
       <div className="chat-input-container">
-        <TelegramIcon />
-        <input placeholder="Type Here" />
-        <AttachFileIcon />
+        <form>
+          <TelegramIcon onClick={sendMessage} />
+          <input
+            type="text"
+            placeholder="Type Here"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <AttachFileIcon />
+        </form>
       </div>
     </div>
   );
