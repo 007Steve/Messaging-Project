@@ -6,7 +6,14 @@ import ChatCard from "./ChatCard";
 import { Avatar } from "@material-ui/core";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import TelegramIcon from "@material-ui/icons/Telegram";
+import { useSelector} from "react-redux";
+import { selectUser} from "../features/userSlice";
+import { auth } from "../firebase";
 function Chat() {
+  const user = useSelector(selectUser);
+  const signOut = () => {
+    auth.signOut()
+  }
   const [input, setInput] = useState("");
   const sendMessage = (e) => {
     e.preventDefault();
@@ -19,10 +26,10 @@ function Chat() {
         <div className="chat-header-icons">
           <NotificationsIcon className="chat-header-icon" />
           <Avatar
-            src="https://yt3.ggpht.com/a-/AOh14Gjr_s6yqhsbIayak1t_j804j_dNsmnIjGLgjUTJ8Q=s108-c-k-c0x00ffffff-no-rj"
+            src={user.photo}
             className="chat-header-icon"
           />
-          <ExitToAppIcon className="chat-header-icon" />
+          <ExitToAppIcon onClick={signOut} className="chat-header-icon" />
         </div>
       </div>
 
