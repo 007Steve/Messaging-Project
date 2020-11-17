@@ -1,12 +1,23 @@
 import React from "react";
 import "../styles/MessageCard.css";
 import { motion } from "framer-motion";
-function MessageCard({ image, texts, time, notification, name }) {
+import { useDispatch } from "react-redux";
+import { setChat } from "../features/chatSlice";
+function MessageCard({ image, texts, time, notification, name, id }) {
+  const dispatch = useDispatch();
   return (
     <motion.div
       drag
       dragConstraints={{ left: 0, right: 300 }}
       dragElastic={0.2}
+      onClick={() => {
+        dispatch(
+          setChat({
+            chatId: id,
+            name: name,
+          })
+        );
+      }}
       className="messageCard"
     >
       <img className="messageCard-image" src={image} alt />

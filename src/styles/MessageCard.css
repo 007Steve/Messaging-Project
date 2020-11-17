@@ -1,28 +1,29 @@
 .messageCard {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  color: gray;
-  border-top: 1px solid #7b83aa;
+  color: #8f99cc;
+  border-bottom: 1px solid #7b83aa46;
   padding: 1rem;
 }
-.messageCard-image-container {
-  width: 20%;
-}
+
 .messageCard-image {
-  width: 50%;
+  max-width: 20%;
   border-radius: 10px;
-  margin: 0;
-  padding: 0;
 }
 .messageCard-h4 {
   color: white;
+}
+.messageCard-info-container {
+  margin-left: 1rem;
+  flex: 1;
 }
 .messageCard-notificaton-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-left: 1rem;
 }
 .messageCard-time {
   font-size: 0.75rem;
