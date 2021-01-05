@@ -9,7 +9,7 @@ import TelegramIcon from "@material-ui/icons/Telegram";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import db from "../firebase";
-import { selectchat, selectchatId, setChat } from "../features/chatSlice";
+import { selectchat, selectchatId} from "../features/chatSlice";
 import { auth } from "../firebase";
 import firebase from "firebase";
 function Chat() {
