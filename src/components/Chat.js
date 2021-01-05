@@ -67,8 +67,8 @@ function Chat() {
         ))}
       </div>
       <div className="chat-input-container">
-        <form>
-          <TelegramIcon onClick={sendMessage} className="send" />
+        <form onSubmit={sendMessage}>
+          <TelegramIcon type="submit" onClick={sendMessage} className="send" />
           <input
             type="text"
             placeholder="Type Here"
