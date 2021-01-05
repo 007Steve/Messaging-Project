@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Sidebar.css";
 import MessageCard from "./MessageCard";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import db from "../firebase";
 function Sidebar() {
@@ -42,7 +40,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar-logo-container">
-        <img className="sidebar-logo" src="/Untitled design (7).png" alt />
+        <img className="sidebar-logo" src="/Untitled design (7).png" alt="logo" />
         <h2>Bolt Chat </h2>
       </div>
       <div className="sidebar-container">

@@ -20,7 +20,7 @@ function MessageCard({ image, texts, time, notification, name, id }) {
       }}
       className="messageCard"
     >
-      <img className="messageCard-image" src={image} alt />
+      <img className="messageCard-image" src={image} alt="logo" />
 
       <div className="messageCard-info-container">
         <h4 className="messageCard-h4">{name}</h4>
