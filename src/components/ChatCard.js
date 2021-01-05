@@ -11,7 +11,7 @@ function ChatCard({
 }) {
   const user = useSelector(selectUser);
   return (
-    <div className={`chatCard ${user.email == email && "message-sender"} `}>
+    <div className={`chatCard ${user.email === email && "message-sender"} `}>
       <Avatar className="chatCard-image" src={photo} />
       <div className="chatCard-info-container">
         <p className="chatCard-texts">{message}</p>
